@@ -1,0 +1,103 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x64e296a9fff0 .scope module, "mux_registered" "mux_registered" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst";
+    .port_info 2 /INPUT 2 "sel";
+    .port_info 3 /INPUT 8 "in0";
+    .port_info 4 /INPUT 8 "in1";
+    .port_info 5 /INPUT 8 "in2";
+    .port_info 6 /INPUT 8 "in3";
+    .port_info 7 /OUTPUT 8 "out";
+P_0x64e296aa2090 .param/l "WIDTH" 0 2 2, +C4<00000000000000000000000000001000>;
+o0x7e2890c58348 .functor BUFZ 1, C4<z>; HiZ drive
+v0x64e296ab80f0_0 .net "clk", 0 0, o0x7e2890c58348;  0 drivers
+o0x7e2890c58108 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x64e296ab81b0_0 .net "in0", 7 0, o0x7e2890c58108;  0 drivers
+o0x7e2890c58138 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x64e296ab8280_0 .net "in1", 7 0, o0x7e2890c58138;  0 drivers
+o0x7e2890c58168 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x64e296ab8380_0 .net "in2", 7 0, o0x7e2890c58168;  0 drivers
+o0x7e2890c58198 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x64e296ab8450_0 .net "in3", 7 0, o0x7e2890c58198;  0 drivers
+v0x64e296ab8540_0 .net "muxtoreg", 7 0, L_0x64e296ab8f00;  1 drivers
+v0x64e296ab8630_0 .net "out", 7 0, v0x64e296ab7db0_0;  1 drivers
+o0x7e2890c583a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x64e296ab86d0_0 .net "rst", 0 0, o0x7e2890c583a8;  0 drivers
+o0x7e2890c581f8 .functor BUFZ 2, C4<zz>; HiZ drive
+v0x64e296ab87a0_0 .net "sel", 1 0, o0x7e2890c581f8;  0 drivers
+S_0x64e296a65d20 .scope module, "mux4_0" "mux4" 2 13, 3 1 0, S_0x64e296a9fff0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "din0";
+    .port_info 1 /INPUT 8 "din1";
+    .port_info 2 /INPUT 8 "din2";
+    .port_info 3 /INPUT 8 "din3";
+    .port_info 4 /INPUT 2 "sel";
+    .port_info 5 /OUTPUT 8 "dout";
+P_0x64e296a65f00 .param/l "WIDTH" 0 3 2, +C4<00000000000000000000000000001000>;
+v0x64e296a66070_0 .net *"_ivl_1", 0 0, L_0x64e296ab8930;  1 drivers
+v0x64e296ab6e50_0 .net *"_ivl_3", 0 0, L_0x64e296ab8a00;  1 drivers
+v0x64e296ab6f30_0 .net *"_ivl_4", 7 0, L_0x64e296ab8aa0;  1 drivers
+v0x64e296ab7020_0 .net *"_ivl_7", 0 0, L_0x64e296ab8c60;  1 drivers
+v0x64e296ab7100_0 .net *"_ivl_8", 7 0, L_0x64e296ab8dc0;  1 drivers
+v0x64e296ab7230_0 .net "din0", 7 0, o0x7e2890c58108;  alias, 0 drivers
+v0x64e296ab7310_0 .net "din1", 7 0, o0x7e2890c58138;  alias, 0 drivers
+v0x64e296ab73f0_0 .net "din2", 7 0, o0x7e2890c58168;  alias, 0 drivers
+v0x64e296ab74d0_0 .net "din3", 7 0, o0x7e2890c58198;  alias, 0 drivers
+v0x64e296ab75b0_0 .net "dout", 7 0, L_0x64e296ab8f00;  alias, 1 drivers
+v0x64e296ab7690_0 .net "sel", 1 0, o0x7e2890c581f8;  alias, 0 drivers
+L_0x64e296ab8930 .part o0x7e2890c581f8, 1, 1;
+L_0x64e296ab8a00 .part o0x7e2890c581f8, 0, 1;
+L_0x64e296ab8aa0 .functor MUXZ 8, o0x7e2890c58168, o0x7e2890c58198, L_0x64e296ab8a00, C4<>;
+L_0x64e296ab8c60 .part o0x7e2890c581f8, 0, 1;
+L_0x64e296ab8dc0 .functor MUXZ 8, o0x7e2890c58108, o0x7e2890c58138, L_0x64e296ab8c60, C4<>;
+L_0x64e296ab8f00 .functor MUXZ 8, L_0x64e296ab8dc0, L_0x64e296ab8aa0, L_0x64e296ab8930, C4<>;
+S_0x64e296ab7830 .scope module, "rb_0" "register_bank" 2 22, 4 1 0, S_0x64e296a9fff0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst";
+    .port_info 2 /INPUT 1 "wr_en";
+    .port_info 3 /INPUT 8 "in";
+    .port_info 4 /OUTPUT 8 "out";
+P_0x64e296ab79e0 .param/l "WIDTH" 0 4 2, +C4<00000000000000000000000000001000>;
+v0x64e296ab7be0_0 .net "clk", 0 0, o0x7e2890c58348;  alias, 0 drivers
+v0x64e296ab7cc0_0 .net "in", 7 0, L_0x64e296ab8f00;  alias, 1 drivers
+v0x64e296ab7db0_0 .var "out", 7 0;
+v0x64e296ab7e80_0 .net "rst", 0 0, o0x7e2890c583a8;  alias, 0 drivers
+L_0x7e2890877018 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x64e296ab7f40_0 .net "wr_en", 0 0, L_0x7e2890877018;  1 drivers
+E_0x64e296aa49c0 .event posedge, v0x64e296ab7e80_0, v0x64e296ab7be0_0;
+    .scope S_0x64e296ab7830;
+T_0 ;
+    %wait E_0x64e296aa49c0;
+    %load/vec4 v0x64e296ab7e80_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 8;
+    %assign/vec4 v0x64e296ab7db0_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x64e296ab7f40_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.2, 8;
+    %load/vec4 v0x64e296ab7cc0_0;
+    %assign/vec4 v0x64e296ab7db0_0, 0;
+T_0.2 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "mux_registered.v";
+    "mux4.v";
+    "register_bank.v";
