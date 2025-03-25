@@ -1,4 +1,4 @@
-module mux_registered #(
+module mux_reg #(
   parameter WIDTH=8
   )(
   input clk,
@@ -19,7 +19,7 @@ module mux_registered #(
     .dout(muxtoreg)
   );
 
-  register_bank rb_0(
+  reg_bank rb_0(
     .clk(clk),
     .rst(rst),
     .wr_en(1'b1),

@@ -1,4 +1,4 @@
-module register_bank #(
+module reg_bank #(
   parameter WIDTH = 8
   )(
   input clk,
